@@ -1,0 +1,204 @@
+div.profile_pic, div.profile_info {
+	width: 98%;
+	margin: auto;
+}
+
+div.profile_info {
+	text-align: center;
+}
+
+.top_nav .navbar-right li.active a {
+	background-color: #ced1d9;
+}
+
+.title_center {
+	float: left;
+	display: block;
+	text-align: center;
+}
+
+.nav_title {
+	float: none;
+	width: 100%;
+}
+
+.site_title {
+	font-weight: bold;
+	text-align: center;
+}
+
+.site_title i {
+	border: none;
+	padding: 5px 10px 5px 0;
+}
+
+.x_content p {
+	line-height: 1.5;
+	font-size: 16px;
+}
+
+div#content {
+	margin-top: 15px;
+}
+
+#login-wrapper {
+	margin-top: 30px;
+	padding: 0 30px;
+	background: white;
+	padding-bottom: 30px;
+	padding-top: 30px;
+}
+
+#login-wrapper h2 {
+	margin: 10px auto 5px auto;
+	font-size: 22px;
+}
+
+#login-wrapper #undertext {
+	margin-bottom: 30px;
+}
+
+#logo {
+	width: 100%;
+	max-height: 240px;
+}
+
+.align_center {
+	text-align: center;
+}
+
+.animated {
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+}
+
+ul.wizard_steps {
+	padding-left: 0;
+}
+
+ul.wizard_steps span.step_no {
+	color: #fff;
+}
+
+ul.wizard_steps span.step_descr {
+	color: #34495E;
+}
+
+.form_wizard .stepContainer {
+	padding: unset;
+	overflow: unset;
+}
+
+.form-group {
+	margin-bottom: 15px;
+}
+
+img#passport {
+	width: 165.2px;
+	height: 212.4px;
+	border: 2px solid #73879C;
+	margin: 20px auto;
+}
+
+div#passport-div label {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+div#passport-div div {
+	text-align: center;
+}
+
+.form-control-feedback {
+	margin-top: 4px;
+}
+
+.form-control-feedback.left {
+	left: 4px;
+}
+
+.img-circle.profile_img {
+	height: 158px;
+}
+
+.select2-wrapper .select2-container {
+	width: 100% !important;
+}
+
+.parsley-errors-list {
+	margin-bottom: 0;
+}
+
+.margin-bottom{
+	margin-bottom: 30px;
+}
+
+.margin-top{
+	margin-top: 30px;
+}
+
+.large-margin-top{
+	margin-top: 50px;
+}
+
+.dashboard-widget-content {
+	padding: 2px;
+}
+
+.dashboard-widget-content .sidebar-widget {
+	border: none;
+	width: 70%;
+	margin: auto;
+	display: block;
+	float: unset;
+}
+
+#percentage-completed {
+	width: 374px !important;
+	height: 200px !important;
+}
+
+.margin-right {
+	margin-right: 30px;
+}
+
+.phone-field label {
+	display: block;
+}
+
+.phone-field .intl-tel-input {
+	width: 100%;
+}
+
+.custom-modal .modal-content{
+	border-radius: 0px !important;
+	/*background: rgba(255, 255, 255, 0.9);*/
+}
+
+button, input[type=submit], input[type=button], a.btn {
+	border-radius: 0 !important;
+}
+
+#login-logo {
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.login-page, .activation-page {
+	background-image: url('/images/pharmacy1.jpg');
+	background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;            
+}
+
+.product-info-header{
+	font-size: 1.1em;
+	font-weight: bold;
+}
+
+.login-page #login-wrapper {
+	margin-top: 6%;
+}
