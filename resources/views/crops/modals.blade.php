@@ -11,7 +11,7 @@
 
            <form class="form" method="POST" action="/crops" id="crop-add-form">
             <div class="modal-body">
-                <div id="products-add-errors-container">
+                <div id="crop-add-errors-container">
                     @include('partials.modal_errors')
                 </div>
 

@@ -40,7 +40,7 @@
 					<!-- page content -->
 					<div class="right_col" role="main">
 						<div class="page-title">
-							<div class="title_center">
+							<div class="title_left">
 								<h1 class="animated fadeInDown">@yield('page_title')</h1>
 							</div>
 						</div>

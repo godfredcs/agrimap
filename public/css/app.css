@@ -37,10 +37,6 @@ div.profile_info {
 	font-size: 16px;
 }
 
-div#content {
-	margin-top: 15px;
-}
-
 #login-wrapper {
 	margin-top: 30px;
 	padding: 0 30px;
@@ -155,6 +151,7 @@ div#passport-div div {
 	float: unset;
 }
 
+
 #percentage-completed {
 	width: 374px !important;
 	height: 200px !important;
@@ -174,7 +171,6 @@ div#passport-div div {
 
 .custom-modal .modal-content{
 	border-radius: 0px !important;
-	/*background: rgba(255, 255, 255, 0.9);*/
 }
 
 button, input[type=submit], input[type=button], a.btn {

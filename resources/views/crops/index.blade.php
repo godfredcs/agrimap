@@ -23,8 +23,10 @@
                  </div>
              </div>
 
-             <div class="x_content" id="order-items-container">
-                 @include('crops.table')
+             <div class="x_content">
+                <div id="crops-container">
+                     @include('crops.table')
+                </div>
              </div>
         </div>
     </div>

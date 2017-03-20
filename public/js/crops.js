@@ -19,11 +19,36 @@ var Crops = {
 	    });
 	},
 
+	addCrop: function(form)
+	{
+		App.submitForm(form, Crops.refreshCrops, $('crop-add-errors-container'));
+	},
+
+	refreshCrops: function()
+	{
+		NProgress.start();
+
+		$.ajax({
+	        type: 'get',
+	        url : '/crops',
+	        success: function(response){
+		        $('#crops-container').html(response);
+		    }
+	    }).always(function () {
+			NProgress.done();
+		});	
+	},
+
 	registerEventListeners: function()
 	{
 		$(document).on('click', '.update-crop', function(){
 			var id = $(this).attr('data-id');
 			Crops.loadEditFields(id);
+		});
+
+		$(document).on('submit', '#crop-add-form', function(e){
+			e.preventDefault();
+			Crops.addCrop(this);
 		});
 	}
 };

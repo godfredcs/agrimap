@@ -7,9 +7,14 @@ use Illuminate\Http\Request;
 
 class CropsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
     	$crops = Crop::all();
+
+        if($request->ajax()){
+            return view('crops.table', compact('crops'));
+        }
+        
     	return view('crops.index', compact('crops'));
     }
 
@@ -18,7 +23,14 @@ class CropsController extends Controller
     	$this->validate($request,['name' => 'required']);
 
     	Crop::create($request->all());
-    	return redirect()->back()->with('status', 'Crop added succesfully');
+
+        $message = 'Crop added succesfully';
+
+        if($request->ajax()){
+            return json_encode(['message' => $message]);
+        }
+
+    	return redirect()->back()->with('status', $message);
     }
 
     public function show($id, Request $request)
