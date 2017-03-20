@@ -22,6 +22,14 @@ Route::get('dashboard', 'DashboardController@index');
 // Crops Routes
 Route::resource('crops', 'CropsController');
 
+// Regions Routes
+Route::resource('regions', 'RegionsController');
+
+// Districts Routes
+Route::resource('districts', 'DistrictsController');
+Route::post('/districts/filter', 'DistrictsController@filter');
+Route::post('/districts/search', 'DistrictsController@search');
+
 // Support Routes
 Route::get('/support' , 'SupportController@index');
 Route::post('/support/send_message' , 'SupportController@sendMessage');

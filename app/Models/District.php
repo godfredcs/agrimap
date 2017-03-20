@@ -8,14 +8,16 @@ class District extends Model
 {
     protected $table = 'districts';
 
+    protected $fillable = ['name', 'region_id'];
+
     public function region()
     {
-    	return $this->belongsTo('App\Models\Region', 'district_id', 'region_id');
+    	return $this->belongsTo('App\Models\Region', 'region_id');
     }
 
     public function markets()
     {
-    	return $this->hasMany('App\Models\Market', 'district_id');
+    	return $this->hasMany('App\Models\Market', 'district_id', 'region_id');
     }
 
     public function crops()

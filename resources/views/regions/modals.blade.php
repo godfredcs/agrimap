@@ -1,4 +1,4 @@
-<div class="modal" id="add-crop">
+<div class="modal" id="add-region">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -6,10 +6,10 @@
                     <span aria-hidden="true">x</span>
                 </button>
 
-                <h4>Add New Crop</h4>
+                <h4>Add New Region</h4>
             </div>
 
-           <form class="form" method="POST" action="/crops" id="crop-add-form">
+           <form class="form" method="POST" action="/regions" id="crop-add-form">
             <div class="modal-body">
                 <div id="products-add-errors-container">
                     @include('partials.modal_errors')
@@ -23,11 +23,6 @@
                             <label>Name</label>
                             <input type="text" name="name" class="form-control">
                         </div>
-
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control"></textarea>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -36,7 +31,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-5 col-offset-1 col-md-offset-1">
-                            <button type="submit" class="btn btn-primary btn-block">Add Crop</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add Region</button>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5">
@@ -51,8 +46,7 @@
     </div>
 </div>
 
-
-<div class="modal" id="update-crop">
+<div class="modal" id="update-region">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -60,12 +54,12 @@
                     <span aria-hidden="true">x</span>
                 </button>
 
-                <h4>Update Crop</h4>
+                <h4>Update Region</h4>
             </div>
 
-           <form class="form" method="POST" action="" id="crop-edit-form">
+           <form class="form" method="POST" action="" id="region-edit-form">
             <div class="modal-body">
-                <div id="crops-update-errors-container">
+                <div id="regions-update-errors-container">
                     @include('partials.modal_errors')
                 </div>
 
@@ -76,12 +70,7 @@
 
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control" id="crop-name-update-box">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <input type="text" name="name" class="form-control" id="region-name-update-box">
                         </div>
                     </div>
                 </div>
@@ -91,7 +80,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-5 col-offset-1 col-md-offset-1">
-                            <button type="submit" class="btn btn-primary btn-block">Update Crop</button>
+                            <button type="submit" class="btn btn-primary btn-block">Update Region</button>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5">

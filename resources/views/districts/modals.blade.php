@@ -1,4 +1,4 @@
-<div class="modal" id="add-crop">
+<div class="modal" id="add-district">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -6,10 +6,10 @@
                     <span aria-hidden="true">x</span>
                 </button>
 
-                <h4>Add New Crop</h4>
+                <h4>Add New District</h4>
             </div>
 
-           <form class="form" method="POST" action="/crops" id="crop-add-form">
+           <form class="form" method="POST" action="/districts" id="crop-add-form">
             <div class="modal-body">
                 <div id="products-add-errors-container">
                     @include('partials.modal_errors')
@@ -25,8 +25,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <label>Region</label>
+
+                            <div class="select2-wrapper">
+                                <select name="region_id" class="form-control select2 select2-hidden-accessible category-filter" id="category-filter">
+                                    @foreach($regions as $region)
+                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -36,7 +43,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-5 col-offset-1 col-md-offset-1">
-                            <button type="submit" class="btn btn-primary btn-block">Add Crop</button>
+                            <button type="submit" class="btn btn-primary btn-block">Add District</button>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5">
@@ -51,8 +58,7 @@
     </div>
 </div>
 
-
-<div class="modal" id="update-crop">
+<div class="modal" id="update-district">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -60,12 +66,12 @@
                     <span aria-hidden="true">x</span>
                 </button>
 
-                <h4>Update Crop</h4>
+                <h4>Update District</h4>
             </div>
 
-           <form class="form" method="POST" action="" id="crop-edit-form">
+           <form class="form" method="POST" action="" id="district-edit-form">
             <div class="modal-body">
-                <div id="crops-update-errors-container">
+                <div id="district-update-errors-container">
                     @include('partials.modal_errors')
                 </div>
 
@@ -76,12 +82,31 @@
 
                         <div class="form-group">
                             <label>Name</label>
-                            <input type="text" name="name" class="form-control" id="crop-name-update-box">
+                            <input type="text" name="name" class="form-control" id="district-name-update-box">
                         </div>
 
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea name="description" class="form-control"></textarea>
+                            <label>Region</label>
+
+                            <div class="select2-wrapper">
+                                <select name="region_id" class="form-control select2 select2-hidden-accessible" id="district-region-update-select">
+                                    @foreach($regions as $region)
+                                        <option value="{{ $region->id }}">{{ $region->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Crops Produced</label>
+
+                            <div class="select2-wrapper">
+                                <select name="crop_ids[]" class="form-control select2 select2-hidden-accessible" id="district-crops-update-select" multiple>
+                                    @foreach($crops as $crop)
+                                        <option value="{{ $crop->id }}">{{ $crop->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +116,7 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-lg-5 col-md-5 col-sm-5 col-offset-1 col-md-offset-1">
-                            <button type="submit" class="btn btn-primary btn-block">Update Crop</button>
+                            <button type="submit" class="btn btn-primary btn-block">Update District</button>
                         </div>
 
                         <div class="col-lg-5 col-md-5 col-sm-5">

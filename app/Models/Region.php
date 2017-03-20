@@ -8,6 +8,8 @@ class Region extends Model
 {
     protected $table = 'regions';
 
+    protected $fillable = ['name'];
+
     public function districts()
     {
     	return $this->hasMany('App\Models\District', 'region_id');
