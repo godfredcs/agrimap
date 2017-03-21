@@ -48,7 +48,13 @@ class CropsController extends Controller
 
         $crop = Crop::find($id);
         $crop->update(['name' => $request->name, 'description' => $request->description ]);
+        
+        $message = 'Crop has been updated succesfully';
+        
+        if($request->ajax()){
+            return json_encode(['message' => $message]);
+        }
 
-        return redirect()->back()->with('status', 'Crop has been updated succesfully');
+        return redirect()->back()->with('status', $message);
     }
 }

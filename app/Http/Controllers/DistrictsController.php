@@ -10,11 +10,15 @@ use Illuminate\Http\Request;
 
 class DistrictsController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
     	$districts = District::all();
     	$regions = Region::all();
         $crops = Crop::all();
+
+        if($request->ajax()){
+            return view('districts.table', compact('districts', 'regions', 'crops'));
+        }
 
     	return view('districts.index', compact('districts', 'regions', 'crops'));
     }
@@ -28,7 +32,13 @@ class DistrictsController extends Controller
 
     	$region->districts()->save($district);
 
-    	return redirect()->back()->with('status', 'District has been added succesfully');
+        $message = 'District has been added succesfully';
+
+        if($request->ajax()){
+            return json_encode(['message' => $message]);
+        }
+
+    	return redirect()->back()->with('status', $message);
     }
 
     public function show($id, Request $request)
@@ -46,9 +56,18 @@ class DistrictsController extends Controller
 
         $district = District::find($id);
         $district->update(['name' => $request->name, 'region_id' => $request->region_id]);
-        $district->crops()->sync($request->crop_ids);
 
-        return redirect()->back()->with('status', 'District has been updated succesfully');
+        if($request->crop_ids){
+            $district->crops()->sync($request->crop_ids);
+        }
+
+        $message = 'District has been updated succesfully';
+
+        if($request->ajax()){
+            return json_encode(['message' => $message]);
+        }
+
+        return redirect()->back()->with('status', $message);
     }
 
     public function filter(Request $request)

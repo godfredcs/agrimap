@@ -21,7 +21,12 @@ var Crops = {
 
 	addCrop: function(form)
 	{
-		App.submitForm(form, Crops.refreshCrops, $('crop-add-errors-container'));
+		App.submitForm(form, Crops.refreshCrops, $('#crop-add-errors-container'));
+	},
+
+	updateCrop: function(form)
+	{
+		App.submitForm(form, Crops.refreshCrops, $('#crops-update-errors-container'));
 	},
 
 	refreshCrops: function()
@@ -49,6 +54,11 @@ var Crops = {
 		$(document).on('submit', '#crop-add-form', function(e){
 			e.preventDefault();
 			Crops.addCrop(this);
+		});
+
+		$(document).on('submit', '#crop-edit-form', function(e){
+			e.preventDefault();
+			Crops.updateCrop(this);
 		});
 	}
 };

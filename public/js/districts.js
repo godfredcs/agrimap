@@ -4,6 +4,16 @@ var Districts = {
 		Districts.registerEventListeners();
 	},
 
+	addDistrict: function(form)
+	{
+		App.submitForm(form,Districts.refreshDistricts,$('#district-add-errors-container'));
+	},
+
+	updateDistrict: function(form)
+	{
+		App.submitForm(form, Districts.refreshDistricts,$('#district-update-errors-container'));
+	},
+
 	loadEditFields: function(id)
 	{
 		$.ajax({
@@ -27,6 +37,21 @@ var Districts = {
 	        	$('#update-district').modal('show');
 		    }
 	    });
+	},
+
+	refreshDistricts: function()
+	{
+		NProgress.start();
+
+		$.ajax({
+	        type: 'get',
+	        url : '/districts',
+	        success: function(response){
+		        $('#districts-container').html(response);
+		    }
+	    }).always(function () {
+			NProgress.done();
+		});	
 	},
 
 	filterDistricts: function(form){
@@ -70,6 +95,16 @@ var Districts = {
 		$(document).on('submit', '.districts-filter-form', function(e){
 			e.preventDefault();
 			Districts.filterDistricts(this);
+		});
+
+		$(document).on('submit', '#district-add-form', function(e){
+			e.preventDefault();
+			Districts.addDistrict(this);
+		});
+
+		$(document).on('submit', '#district-edit-form', function(e){
+			e.preventDefault();
+			Districts.updateDistrict(this);
 		});
 	}
 };
