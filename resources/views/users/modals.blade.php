@@ -41,6 +41,16 @@
 						</div>
 
 						<div class="form-group">
+							<label for="email">Email</label>
+							<input  type         = "text"
+									class        = "form-control" 
+									id           = "email" 
+									name         = "email"
+									placeholder  = "Email"
+									autocomplete = "off">
+						</div>
+
+						<div class="form-group">
 							<label for="password">Password</label>
 							<input  type         = "password"
 									class        = "form-control" 
@@ -209,7 +219,7 @@
 
 							<input type="hidden" name="_method" value="DELETE">
 
-							<p class="centered">Are you sure you want to deactivate this user?</p>
+							<p class="centered">Are you sure you want to remove this user?</p>
 						</div>
 					</div>
 				</div>

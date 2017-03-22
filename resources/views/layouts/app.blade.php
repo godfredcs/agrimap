@@ -10,7 +10,7 @@
 		@include('layouts.styles')
 		@yield('styles')
 
-		<title>@yield('title') | Ezi Pharmacy</title>
+		<title>@yield('title') | agrimap</title>
 	</head>
 
 	<?php

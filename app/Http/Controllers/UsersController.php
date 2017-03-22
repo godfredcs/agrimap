@@ -30,6 +30,35 @@ class UsersController extends Controller
 		return view('users.index', compact('users', 'roles', 'role_id'));
 	}
 
+    public function store(Request $request)
+    {
+        $rules = [
+            'username' => 'required|min:3',
+            'name' => 'required|min:2|max:255',
+            'password' => 'required|confirmed',
+            'email' => 'required|email',
+            'role_id' => 'required'
+        ];
+
+        $errorMessages = [
+            'role_id.required' => 'The user role field is required.',
+        ];
+
+        $data = $request->all();
+
+        $validator = Validator::make($data, $rules, $errorMessages);
+
+        if ($validator->fails()) {
+            return ['errors' => $validator->messages()];
+        }
+
+        $data['password'] = bcrypt($request->password);
+
+        User::create($data);
+
+        return;
+    }
+
 	/**
 	 * Show the account page for updating account information.
 	 * For Ajax requests to populate user update form for system admins,
@@ -164,5 +193,24 @@ class UsersController extends Controller
     
         // Return back to the previous page with session success
         return redirect()->back()->with('status', 'Account was updated successfully.');
+    }
+
+    /**
+     * Remove the specified user from the database
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        $user = User::find($id);
+
+        if (is_null($user)) {
+            return ['errors' => ['There is no user with such ID.']];
+        }
+
+        $user->delete();
+
+        return;
     }
 }

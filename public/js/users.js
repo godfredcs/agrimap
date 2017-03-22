@@ -140,7 +140,6 @@ var Users = {
 
 	noteUsernameChange: function()
 	{
-		alert('Hello');
 		$("input#username_edited").val(true);
 	},
 

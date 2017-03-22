@@ -27,11 +27,17 @@
 		<div class="menu_section">
 			<ul class="nav side-menu">
 				<li><a href="{{ URL::to('/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+
+				@if(Auth::user()->isSiteAdmin())
 				<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
 				<li><a href="{{ URL::to('/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
 				<li><a href="{{ URL::to('/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
+				@endif
 				
+				@if(Auth::user()->isSystemAdmin())
 				<li><a href="{{ URL::to('/users') }}"><i class="fa fa-group"></i>Users</a></li>
+				<li><a href="{{ URL::to('/') }}"><i class="fa fa-download"></i>Backup and Restore</a></li>
+				@endif
 			</ul>		
 		</div>
 

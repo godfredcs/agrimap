@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'role_id', 'status_id', 'username', 'name', 'email', 'password',
+        'role_id', 'username', 'name', 'email', 'password',
     ];
 
     /**
@@ -68,70 +68,26 @@ class User extends Authenticatable
     }
 
     /**
-     * Declares relationship between user and products added by that user
-     * 
-     * @return Illuminate\Database\Eloquent
-     */
-    public function products()
-    {
-        return $this->hasMany('App\Models\Product', 'added_by');
-    }
-
-    /**
-     * Declares relationship that a user has one status
-     * 
-     * @return Illuminate\Database\Eloquent
-     */
-    public function status()
-    {
-        return $this->belongsTo('App\Models\UserStatus');
-    }
-
-    /**
-     * Determines if a user is a manager
+     * Determines if a user is a system admin
      * 
      * @return boolean
      */
-    public function isManager() 
+    public function isSystemAdmin() 
     {
         $user = self::with('role')->find($this->id);
 
-        return strtolower($user->role->name) === 'manager';
+        return strtolower($user->role->system_name) === 'sys_admin';
     }
 
     /**
-     * Determines if a user is a pharmacist
+     * Determines if a user is a site administrator
      * 
      * @return boolean
      */
-    public function isPharmacist() 
+    public function isSiteAdmin() 
     {
         $user = self::with('role')->find($this->id);
 
-        return strtolower($user->role->name) === 'pharmacist';
-    }
-
-    /**
-     * Determines if a user is a cashier
-     * 
-     * @return boolean
-     */
-    public function isCashier() 
-    {
-        $user = self::with('role')->find($this->id);
-
-        return strtolower($user->role->name) === 'cashier';
-    }
-
-    /**
-     * Determines if a user is active
-     * 
-     * @return boolean
-     */
-    public function isActivated()
-    {
-        $user = self::with('status')->find($this->id);
-
-        return strtolower($user->status->name) === 'active';
+        return strtolower($user->role->system_name) === 'admin';
     }
 }
