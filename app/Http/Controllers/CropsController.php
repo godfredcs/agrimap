@@ -57,4 +57,18 @@ class CropsController extends Controller
 
         return redirect()->back()->with('status', $message);
     }
+
+    public function destroy($id, Request $request)
+    {
+        $crop = Crop::find($id);
+        $crop->delete();
+
+        $message = 'Crop has been deleted succesfully';
+
+        if($request->ajax()){
+            return json_encode(['message' => $message]);
+        }
+
+        return redirect()->back()->with('status', $message);
+    }
 }

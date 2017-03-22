@@ -21,7 +21,8 @@ class CreateDistrictsTable extends Migration
 
             $table->foreign('region_id')
                   ->references('id')
-                  ->on('regions');
+                  ->on('regions')
+                  ->onDelete('cascade');
         });
     }
 

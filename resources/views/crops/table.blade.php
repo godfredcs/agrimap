@@ -10,7 +10,7 @@
             <td>{{ $crop->name }}</td>
             <td>
              	<button class="btn btn-info btn-sm update-crop" data-id="{{ $crop->id }}"><i class="fa fa-pencil"></i></button>
-             	<button class="btn btn-danger btn-sm delete-product" data-id="{{ $crop->id }}"><i class="fa fa-trash-o"></i></button>
+             	<button class="btn btn-danger btn-sm delete-crop" data-id="{{ $crop->id }}"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
     @endforeach

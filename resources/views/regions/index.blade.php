@@ -24,8 +24,10 @@
                      </div>
                  </div>
 
-                 <div class="x_content" id="order-items-container">
-                     @include('regions.table')
+                 <div class="x_content">
+                    <div id="regions-container">
+                         @include('regions.table')
+                    </div>
                  </div>
             </div>
         </div>

@@ -12,9 +12,14 @@ class RegionsController extends Controller
 	 * 
 	 * @return Illuminte\Http\Response
 	 */
-	public function index()
+	public function index(Request $request)
 	{
 		$regions = Region::all();
+
+		if($request->ajax()){
+			return view('regions.table', compact('regions'));
+		}
+
 		return view('regions.index', compact('regions'));
 	}
 
@@ -23,7 +28,13 @@ class RegionsController extends Controller
 		$this->validate($request,['name' => 'required']);
 
     	Region::create($request->all());
-    	return redirect()->back()->with('status', 'Region added succesfully');
+    	$message = 'Region added succesfully';
+        
+        if($request->ajax()){
+        	return json_encode(['message' => 'Region has been added succesfully']);
+        }
+        
+    	return redirect()->back()->with('status', $message);
 	}
 
 	public function show($id, Request $request)
@@ -41,7 +52,27 @@ class RegionsController extends Controller
 
 		$region = Region::find($id);
 		$region->update(['name' => $request->name ]);
+        
+        $message = 'Region has been updated succesfully';
 
-		return redirect()->back()->with('status', 'Region has been updated succesfully');
+        if($request->ajax()){
+        	return json_encode(['message' => $message]);
+        }
+
+		return redirect()->back()->with('status', $message);
+	}
+
+	public function destroy($id, Request $request)
+	{
+		$region = Region::find($id);
+		$region->delete();
+
+		$message = 'Region has been removed succesfully';
+
+		if($request->ajax()){
+			return json_encode(['message' => $message]);
+		}
+
+		return redirect()->back()->with('status', $message);
 	}
 }

@@ -36,7 +36,7 @@
 
 		<div class="menu_section">
 			<ul class="nav side-menu">
-				<li class="{{ Request::segment(1) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/my_account') }}"><i class="fa fa-user"></i>My Account</a></li>
+				<li class="{{ Request::segment(1) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/users/'.Auth::user()->id) }}"><i class="fa fa-user"></i>My Account</a></li>
 				<li class="{{ Request::segment(1) === 'support' ? 'active' : null }}"><a href="{{ URL::to('/support') }}"><i class="fa fa-support"></i>Support</a></li>
 			</ul>
 		</div>

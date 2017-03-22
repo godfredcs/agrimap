@@ -29,6 +29,11 @@ var Crops = {
 		App.submitForm(form, Crops.refreshCrops, $('#crops-update-errors-container'));
 	},
 
+	deleteCrop: function(form)
+	{
+		App.submitForm(form, Crops.refreshCrops);
+	},
+
 	refreshCrops: function()
 	{
 		NProgress.start();
@@ -59,6 +64,21 @@ var Crops = {
 		$(document).on('submit', '#crop-edit-form', function(e){
 			e.preventDefault();
 			Crops.updateCrop(this);
+		});
+
+		$(document).on('click', '.delete-crop', function(e){
+			e.preventDefault();
+			var id = $(this).attr('data-id');
+            
+            $('.delete-form').attr('action', '/crops/' + id);
+            $('.delete-form').attr('id', 'crop-delete-form');
+            App.showConfirmDialog("Do you want to delete this crop?");
+		});
+
+		$(document).on('submit', '#crop-delete-form', function(e){
+			e.preventDefault();
+			Crops.deleteCrop(this);
+			App.hideConfirmDialog();
 		});
 	}
 };

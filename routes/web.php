@@ -33,3 +33,6 @@ Route::post('/districts/search', 'DistrictsController@search');
 // Support Routes
 Route::get('/support' , 'SupportController@index');
 Route::post('/support/send_message' , 'SupportController@sendMessage');
+
+// Users Routes
+Route::resource('users', 'UsersController');

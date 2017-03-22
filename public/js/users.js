@@ -142,8 +142,14 @@ var Users = {
 
 		if ($('.password_editable').hasClass('hidden') === false) {
 			$('.password_editable, .validate_user').addClass('hidden');
-			$('input#change_password').val('CHANGE PASSWORD');	
+			$('input#change_password').val('CHANGE LOGIN CREDENTIALS');	
 		}
+	},
+
+	noteUsernameChange: function()
+	{
+		alert('Hello');
+		$("input#username_edited").val(true);
 	},
 
 	/**
@@ -152,12 +158,18 @@ var Users = {
 	 * classes and also changes the value and classes of the handler
 	 */
 	EnableChangePassword: function (element) {
+		if ($('input#username').attr('disabled')) {
+			$('input#username').removeAttr('disabled');
+		} else {
+			$('input#username').attr('disabled', true);
+		}
+
 		$('.password_editable').toggleClass('hidden');
 
-		if ($(element).val() == 'CHANGE PASSWORD') {
-			$(element).val('CANCEL PASSWORD CHANGE');	
+		if ($(element).val() == 'CHANGE LOGIN CREDENTIALS') {
+			$(element).val('CANCEL LOGIN CREDENTIALS UPDATE');	
 		} else {
-			$(element).val('CHANGE PASSWORD');	
+			$(element).val('CHANGE LOGIN CREDENTIALS');	
 		}
 		
 		if($('.password_editable').is(":visible")) {
