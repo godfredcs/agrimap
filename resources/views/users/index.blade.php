@@ -31,7 +31,6 @@
 								@include('users.table', [
 									'roles'    => $roles,
 									'users'    => $users,
-									'statuses' => $statuses,
 								])
 							</div>
 						</div>
@@ -43,7 +42,6 @@
 
 	@include('users.modals', [
 		'roles'    => $roles,
-		'statuses' => $statuses,
 	])
 @endsection
 

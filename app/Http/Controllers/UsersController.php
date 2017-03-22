@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Role;
 
 use Hash;
 use Validator;
@@ -10,9 +11,40 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    public function show($id)
+	public function index(Request $request)
+	{
+		$roles = Role::all();
+        $users = User::with('role');
+
+        if ($request->has('role')) {
+            $users->where('role_id', $request->role);
+        }
+
+        $users = $users->orderBy('name', 'asc')->paginate(20);
+        $role_id =  $request->has('role') ? $request->role : '';
+
+        if($request->ajax()){
+        	return view('users.table', compact('users', 'roles', 'role_id'));
+        }
+
+		return view('users.index', compact('users', 'roles', 'role_id'));
+	}
+
+	/**
+	 * Show the account page for updating account information.
+	 * For Ajax requests to populate user update form for system admins,
+	 * the user resource is returned as JSON
+	 * 
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
+    public function show($id, Request $request)
     {
     	$user = User::find($id);
+
+    	if($request->ajax()){
+    		return $user;
+    	}
 
     	return view('users.my_account', compact('user'));
     }
@@ -48,6 +80,7 @@ class UsersController extends Controller
         // If user wants to change username, validate password
         if($request->has('username_edited') && $request->username_edited == 'true'){
         	$rules['old_password'] = 'required';
+        	$rules['username'] = 'unique:users,username,'.$user->id;
         }
 
         if ($request->has('email')) {

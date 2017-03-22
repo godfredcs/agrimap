@@ -30,7 +30,8 @@
 				<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
 				<li><a href="{{ URL::to('/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
 				<li><a href="{{ URL::to('/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
-				<li><a href="{{ URL::to('/markets') }}"><i class="fa fa-institution"></i> Markets</a></li>
+				
+				<li><a href="{{ URL::to('/users') }}"><i class="fa fa-group"></i>Users</a></li>
 			</ul>		
 		</div>
 

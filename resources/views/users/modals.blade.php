@@ -133,7 +133,7 @@
 							autocomplete = "off">
 				</div>
 
-				<div class="form-group password-fields hidden">
+				<div class="form-group password-fields">
 					<label for="password">Password</label>
 					<input  type         = "password"
 							class        = "form-control" 
@@ -143,7 +143,7 @@
 							autocomplete = "off">
 				</div>
 
-				<div class="form-group password-fields hidden">
+				<div class="form-group password-fields">
 					<label for="password_confirmation">Confirm Password</label>
 					<input  type         = "password"
 							class        = "form-control" 
@@ -154,7 +154,7 @@
 				</div>
 
 				<div class="row">
-					<div class="col-lg-6 col-md-6 col-sm-6">
+					<div class="col-lg-12 col-md-12 col-sm-12">
 						<div class="form-group">
 							<label for="role_id">Role</label>
 
@@ -163,20 +163,6 @@
 
 								@foreach ($roles as $role)
 									<option value="{{ $role->id }}">{{ $role->name }}</option>
-								@endforeach
-							</select>
-						</div>
-					</div>
-
-					<div class="col-lg-6 col-md-6 col-sm-6">
-						<div class="form-group">
-							<label for="status_id">Status</label>
-
-							<select id="status_id" name="status_id" class="form-control">
-								<option value="">Select User's Status</option>
-
-								@foreach ($statuses as $status)
-									<option value="{{ $status->id }}">{{ $status->name }}</option>
 								@endforeach
 							</select>
 						</div>

@@ -50,20 +50,12 @@ var Users = {
 
 		// Requesting for the details through a GET request with the id as a wildcard
 		$.get('/users/' + user_id, function(response) {
-			var user = response['user'];
+			var user = response;
 
 			$(modal + ' input[name=username]').val(user.username);
 			$(modal + ' input[name=name]').val(user.name);
-			$(modal + ' select[name=role_id]').val(user.role_id)
+			$(modal + ' select[name=role_id]').val(user.role_id);
 			$(modal + ' select[name=status_id]').val(user.status_id);
-
-			if (!response['isActivated']) {
-				passwordFields.removeClass('hidden');
-				
-			} else {
-				passwordFields.find('input').val('');
-				passwordFields.addClass('hidden');
-			}
 		});
 
 		//Setting the form's action with user's id
