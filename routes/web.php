@@ -13,26 +13,35 @@
 
 // Auth Routes
 Auth::routes();
+
 Route::get('logout', 'Auth\LoginController@logout');
 
-Route::get('/', 'DashboardController@index');
+Route::get('/', 'DashboardController@index')->middleware('auth');
 
 Route::get('dashboard', 'DashboardController@index');
 
-// Crops Routes
-Route::resource('crops', 'CropsController');
+Route::group(['middleware' => 'admin'], function(){
+    // Crops Routes
+	Route::resource('crops', 'CropsController');
 
-// Regions Routes
-Route::resource('regions', 'RegionsController');
+	// Regions Routes
+	Route::resource('regions', 'RegionsController');
 
-// Districts Routes
-Route::resource('districts', 'DistrictsController');
-Route::post('/districts/filter', 'DistrictsController@filter');
-Route::post('/districts/search', 'DistrictsController@search');
+	// Districts Routes
+	Route::resource('districts', 'DistrictsController');
+	Route::post('/districts/filter', 'DistrictsController@filter');
+	Route::post('/districts/search', 'DistrictsController@search');
+
+});
+
+Route::group(['middleware' => 'sys_admin'], function(){
+	// Users Routes
+	Route::resource('users', 'UsersController');
+	Route::get('/backup', 'BackupsController@index');
+});
+
 
 // Support Routes
 Route::get('/support' , 'SupportController@index');
 Route::post('/support/send_message' , 'SupportController@sendMessage');
 
-// Users Routes
-Route::resource('users', 'UsersController');

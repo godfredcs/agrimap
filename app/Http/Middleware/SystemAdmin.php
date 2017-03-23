@@ -17,6 +17,7 @@ class SystemAdmin
     public function handle($request, Closure $next)
     {
         if(!(Auth::user() && Auth::user()->isSystemAdmin())){
+            Auth::logout();
             return redirect('/login');
         }
 

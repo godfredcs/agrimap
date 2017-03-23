@@ -202,3 +202,8 @@ button, input[type=submit], input[type=button], a.btn {
 .input-custom-height{
 	height: 38px;
 }
+
+p.form-info{
+  font-size: 0.9em;
+  text-align: center;
+}

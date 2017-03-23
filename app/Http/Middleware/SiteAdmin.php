@@ -17,6 +17,7 @@ class SiteAdmin
     public function handle($request, Closure $next)
     {
         if(!(Auth::user() && Auth::user()->isSiteAdmin())){
+            Auth::logout();
             return redirect('/login');
         }
 

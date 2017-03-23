@@ -36,7 +36,7 @@
 				
 				@if(Auth::user()->isSystemAdmin())
 				<li><a href="{{ URL::to('/users') }}"><i class="fa fa-group"></i>Users</a></li>
-				<li><a href="{{ URL::to('/') }}"><i class="fa fa-download"></i>Backup and Restore</a></li>
+				<li><a href="{{ URL::to('/backup') }}"><i class="fa fa-download"></i>Backup and Restore</a></li>
 				@endif
 			</ul>		
 		</div>
