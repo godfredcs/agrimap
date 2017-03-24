@@ -11,8 +11,8 @@
             <td>{{ $crop->name }}</td>
             <td>{{ count($crop->districts) }} districts</td>
             <td>
-             	<button class="btn btn-info btn-sm update-crop" data-id="{{ $crop->id }}"><i class="fa fa-pencil"></i></button>
-             	<button class="btn btn-danger btn-sm delete-crop" data-id="{{ $crop->id }}"><i class="fa fa-trash-o"></i></button>
+             	<button class="btn btn-info btn-sm update-crop" data-id="{{ $crop->id }}"  title="Update Crop"><i class="fa fa-pencil"></i></button>
+             	<button class="btn btn-danger btn-sm delete-crop" data-id="{{ $crop->id }}"  title="Delete Crop"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
     @endforeach

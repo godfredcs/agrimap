@@ -17,8 +17,8 @@
                 @endforeach
             </td>
             <td>
-             	<button class="btn btn-info btn-sm update-district" data-id="{{ $district->id }}"><i class="fa fa-pencil"></i></button>
-             	<button class="btn btn-danger btn-sm delete-district" data-id="{{ $district->id }}"><i class="fa fa-trash-o"></i></button>
+             	<button class="btn btn-info btn-sm update-district" data-id="{{ $district->id }}" title="Update District"><i class="fa fa-pencil"></i></button>
+             	<button class="btn btn-danger btn-sm delete-district" data-id="{{ $district->id }}" title="Delete District"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
     @endforeach
