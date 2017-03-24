@@ -9,6 +9,11 @@ Backups = {
 			$('backup-form-button').attr('value', 'Backing up data...');
 			App.submitForm(this,Backups.refreshButtonLabel,null);
 		});
+
+		$(document).on('submit', '#db-restore-form', function(e){
+			e.preventDefault();
+			App.submitForm(this, null, null);
+		});
 	},
 
 	refreshButtonLabel: function(){

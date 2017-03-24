@@ -52,7 +52,7 @@ var Regions = {
 	{
 		$(document).on('submit', '#region-add-form', function(e){
 			e.preventDefault();
-			Regions.addRegion(form);
+			Regions.addRegion(this);
 		});
 
 		$(document).on('click', '.update-region', function(){

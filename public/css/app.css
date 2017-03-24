@@ -184,7 +184,7 @@ button, input[type=submit], input[type=button], a.btn {
 }
 
 .login-page, .activation-page {
-	background-image: url('/images/pharmacy1.jpg');
+	background-image: url('/images/admin_bg.jpg');
 	background-size:     cover;                      
     background-repeat:   no-repeat;
     background-position: center center;            

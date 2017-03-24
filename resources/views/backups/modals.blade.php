@@ -21,7 +21,15 @@
 
                         <div class="form-group">
                             <label>Select backup sql file</label>
-                            <input type="file" name="sql_file" class="form-control">
+                            
+                            <div class="input-group">
+				                <label class="input-group-btn">
+				                    <span class="btn btn-info">
+				                        Browse&hellip; <input type="file" style="display: none;" name="sql_file">
+				                    </span>
+				                </label>
+				                <input type="text" class="form-control" readonly>
+				            </div>
                         </div>
                     </div>
                 </div>

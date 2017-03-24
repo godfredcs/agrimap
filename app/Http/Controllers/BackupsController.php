@@ -52,7 +52,18 @@ class BackupsController extends Controller
 
     public function restore(Request $request)
     {
+        $this->validate($request, ['sql_file' => 'required']);
+
         if($request->file('sql_file')){
+            $extension = $request->file('sql_file')->getClientOriginalExtension();
+
+            if($extension != 'sql'){
+                if($request->ajax())
+                    return ['errors' => ['Invalid backup file uploaded']];
+                else
+                    return redirect()->back()->withErrors('Invalid backup file uploaded');
+            }
+
             $fileName = 'restore.sql';
             $request->file('sql_file')->move(base_path().'/storage/',$fileName);
         }

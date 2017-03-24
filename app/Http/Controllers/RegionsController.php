@@ -23,9 +23,16 @@ class RegionsController extends Controller
 		return view('regions.index', compact('regions'));
 	}
 
+    /**
+     * Add a new region to the database
+     * 
+     * @param  Illuminate\Http\Request the form request
+     * @return Illuminate\Http\Response
+     */
 	public function store(Request $request)
 	{
-		$this->validate($request,['name' => 'required']);
+		$this->validate($request,['name' => 'required|unique:regions,name'],
+			['name.unique' => 'Region already exists']);
 
     	Region::create($request->all());
     	$message = 'Region added succesfully';
@@ -37,6 +44,13 @@ class RegionsController extends Controller
     	return redirect()->back()->with('status', $message);
 	}
 
+    /**
+     *  Load and return a region
+     *  
+     * @param  int  $id the id of the region
+     * @param  Illuminate\Http\Request $request the HTTP request to load resource
+     * @return Illuminate\Http\Response the HTTP response
+     */
 	public function show($id, Request $request)
 	{
 		$region = Region::find($id);

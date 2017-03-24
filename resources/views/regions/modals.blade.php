@@ -9,9 +9,9 @@
                 <h4>Add New Region</h4>
             </div>
 
-           <form class="form" method="POST" action="/regions" id="crop-add-form">
+           <form class="form" method="POST" action="/regions" id="region-add-form">
             <div class="modal-body">
-                <div id="products-add-errors-container">
+                <div id="region-add-errors-container">
                     @include('partials.modal_errors')
                 </div>
 
