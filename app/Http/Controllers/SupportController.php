@@ -15,7 +15,6 @@ class SupportController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
-        $this->middleware('verify_activation');
     }
 
 	/**
@@ -35,7 +34,7 @@ class SupportController extends Controller
      */
     public function sendMessage(Request $request)
     {
-    	$destination = 'gideonappoh@gmail.com';
+    	$destination = 'agrimapdev@gmail.com';
 
     	$validator = Validator::make($request->all(),
     		[

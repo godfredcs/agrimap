@@ -82,12 +82,11 @@
 		                    </div>
 
 		                    <div class="x_content contact-info-sidebar">
-		                        <p><i class="fa fa-envelope-o"></i> <a href="mailto:info@ezipharmacy.com">info@ezipharmacy.com</a></p>
-		                        <p><i class="fa fa-envelope-o"></i> <a href="mailto:support@ezipharmacy.com">support@ezipharmacy.com</a></p>
+		                        <p><i class="fa fa-envelope-o"></i> <a href="mailto:info@agrimap.com">info@agrimap.com</a></p>
+		                        <p><i class="fa fa-envelope-o"></i> <a href="mailto:support@agrimap.com">support@agrimap.com</a></p>
 
 								<br>
 
-		                        <p><i class="fa fa-phone"></i> +233 54 204 3151</p>
 		                        <p><i class="fa fa-phone"></i> +233 54 079 2532</p>
 		                    </div>
 		                </div>
