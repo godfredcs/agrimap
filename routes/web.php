@@ -38,6 +38,8 @@ Route::group(['middleware' => 'sys_admin'], function(){
 	// Users Routes
 	Route::resource('users', 'UsersController');
 	Route::get('/backup', 'BackupsController@index');
+	Route::post('/backup', 'BackupsController@backup');
+	Route::post('/restore', 'BackupsController@restore');
 });
 
 
