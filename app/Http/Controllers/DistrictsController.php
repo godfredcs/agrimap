@@ -12,7 +12,7 @@ class DistrictsController extends Controller
 {
     public function index(Request $request)
     {
-    	$districts = District::all();
+    	$districts = District::orderBy('name')->paginate(5);
     	$regions = Region::all();
         $crops = Crop::all();
 

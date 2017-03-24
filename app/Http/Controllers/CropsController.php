@@ -9,7 +9,7 @@ class CropsController extends Controller
 {
     public function index(Request $request)
     {
-    	$crops = Crop::all();
+    	$crops = Crop::orderBy('name')->paginate(10);
 
         if($request->ajax()){
             return view('crops.table', compact('crops'));

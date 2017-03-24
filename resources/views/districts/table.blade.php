@@ -23,6 +23,12 @@
         </tr>
     @endforeach
 </table>
+
+<div id="pagination">
+    {!! 
+        $districts->render() 
+    !!}
+</div>
 @else
     <div class="well">
         <p>No districts added yet</p>
