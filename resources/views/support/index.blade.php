@@ -87,7 +87,7 @@
 
 								<br>
 
-		                        <p><i class="fa fa-phone"></i> +233 54 079 2532</p>
+		                        <p><i class="fa fa-phone"></i> +233 24 046 0627</p>
 		                    </div>
 		                </div>
 		            </div>

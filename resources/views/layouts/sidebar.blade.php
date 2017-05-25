@@ -26,7 +26,7 @@
 	<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 		<div class="menu_section">
 			<ul class="nav side-menu">
-				<li><a href="{{ URL::to('/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
+				<li><a href="{{ URL::to('/admin/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
 				@if(Auth::user()->isSiteAdmin())
 					<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
