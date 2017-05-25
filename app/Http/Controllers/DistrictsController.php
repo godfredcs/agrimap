@@ -10,6 +10,17 @@ use Illuminate\Http\Request;
 
 class DistrictsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('guest', ['only' => 'website']);
+    }
+
+    public function website()
+    {
+        $districts = District::paginate(20);
+        return view('website.districts.index', compact('districts'));
+    }
+
     public function index(Request $request)
     {
     	$districts = District::orderBy('name')->paginate(5);

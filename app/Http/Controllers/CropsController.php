@@ -6,7 +6,38 @@ use App\Models\Crop;
 use Illuminate\Http\Request;
 
 class CropsController extends Controller
-{
+{   
+    public function __construct()
+    {
+        $this->middleware('guest', ['only' => 'website']);
+    }
+
+    /**
+     * Display all crops on the website
+     * @return [type] [description]
+     */
+    public function website()
+    {
+        $crops = Crop::all();
+        return view('website.crops.index', compact('crops'));
+    }
+
+    /**
+     * Display crops for specific id
+     * @param  [type] $id [description]
+     * @return [type]     [description]
+     */
+    public function crops($id)
+    {
+        $crops = Crop::with('region')->find($id);
+        return view('website.crops.show');
+    }
+
+    /**
+     * [index description]
+     * @param  Request $request [description]
+     * @return [type]           [description]
+     */
     public function index(Request $request)
     {
     	$crops = Crop::orderBy('name')->paginate(10);

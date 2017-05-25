@@ -7,6 +7,32 @@ use Illuminate\Http\Request;
 
 class RegionsController extends Controller
 {
+	public function __construct()
+	{
+		$this->middleware('guest', ['only' => 'website']);
+	}
+
+	/**
+	 * Display all regions
+	 * @return [view] [description]
+	 */
+	public function website()
+	{
+		$regions = Region::all();
+		return view('website.regions.index', compact('regions'));
+	}
+
+	/**
+	 * Show a specific region
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
+	public function regions($id)
+	{
+		$region = Region::with(['districts', 'crops'])->find($id);
+		return view('website.regions.show', compact('region'));
+	}
+
 	/**
 	 * Show the landing page for managing regions
 	 * 

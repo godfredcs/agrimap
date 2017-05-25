@@ -29,22 +29,22 @@
 				<li><a href="{{ URL::to('/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
 				@if(Auth::user()->isSiteAdmin())
-				<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
-				<li><a href="{{ URL::to('/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
-				<li><a href="{{ URL::to('/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
+					<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
+					<li><a href="{{ URL::to('/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
+					<li><a href="{{ URL::to('/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
 				@endif
 				
 				@if(Auth::user()->isSystemAdmin())
-				<li><a href="{{ URL::to('/users') }}"><i class="fa fa-group"></i>Users</a></li>
-				<li><a href="{{ URL::to('/backup') }}"><i class="fa fa-download"></i>Backup and Restore</a></li>
+					<li><a href="{{ URL::to('/admin/users') }}"><i class="fa fa-group"></i>Users</a></li>
+					<li><a href="{{ URL::to('/admin/backup') }}"><i class="fa fa-download"></i>Backup and Restore</a></li>
 				@endif
 			</ul>		
 		</div>
 
 		<div class="menu_section">
 			<ul class="nav side-menu">
-				<li class="{{ Request::segment(1) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/users/'.Auth::user()->id) }}"><i class="fa fa-user"></i>My Account</a></li>
-				<li class="{{ Request::segment(1) === 'support' ? 'active' : null }}"><a href="{{ URL::to('/support') }}"><i class="fa fa-support"></i>Support</a></li>
+				<li class="{{ Request::segment(1) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/admin/users/'.Auth::user()->id) }}"><i class="fa fa-user"></i>My Account</a></li>
+				<li class="{{ Request::segment(1) === 'support' ? 'active' : null }}"><a href="{{ URL::to('/admin/support') }}"><i class="fa fa-support"></i>Support</a></li>
 			</ul>
 		</div>
 	</div>

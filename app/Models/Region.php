@@ -8,10 +8,19 @@ class Region extends Model
 {
     protected $table = 'regions';
 
-    protected $fillable = ['name'];
+    protected $guarded = [];
 
+    /**
+     * Declare relationship between regions and districts
+     * @return [type] [description]
+     */
     public function districts()
     {
-    	return $this->hasMany('App\Models\District', 'region_id');
+    	return $this->hasMany(District::class, 'region_id');
+    }
+
+    public function crops()
+    {
+        return $this->hasMany(Crop::class);
     }
 }

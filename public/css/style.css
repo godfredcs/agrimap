@@ -1,0 +1,120 @@
+@charset "utf-8";
+
+.navbar.navbar-default {
+	background-color: #247024;
+	border: none;
+	padding: 10px 0;
+}
+
+ul.nav.navbar-nav li>a {
+	color: white;
+}
+
+ul.nav.navbar-nav li>a:hover, .nav>.active {
+	color: white;
+	background-color: #0E340F !important;
+}
+
+ul.nav.navbar-nav > li.active {
+	color: white !important;
+	background-color: #0e340f !important;
+}
+
+a.navbar-brand {
+	color: white !important;
+}
+
+.navbar-header > button {
+	background-color: transparent !important;
+}
+
+hr {
+	color: #f5f;
+}
+
+.gap {
+	padding: 30px;
+}
+
+#first_page {
+	height: 100vh;
+	color: #ffffff;
+}
+
+#first_page .container {
+	padding: 150px 0 0;
+}
+
+.slider-text > h1 {
+	font-size: 4em;
+}
+
+div#car1 {
+	background: url('../images/01.jpg') center center no-repeat;
+	size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+div#car2 {
+	background: url('../images/03.jpg') center center no-repeat;
+	size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+div#car3 {
+	background: url('../images/05.jpg') center center no-repeat;
+	size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+#name {
+	padding: 0px 0 50px;
+}
+
+#name span {
+	font-size: 4em;
+	padding: 20px;
+}
+
+.hovered {
+	color: #fff;
+	background-color: #247024;
+}
+
+#services {
+	background-color: #f5f5f5;
+	padding: 50px 0;
+}
+
+#info {
+	padding: 50px 0;
+}
+
+#products {
+	background-color: #247024;
+	color: #ffffff;
+	padding: 50px 0;
+}
+
+#footer {
+	padding: 20px 0 10px;
+}
+
+#footer a {
+	color: #247024;
+}
+
+
+
+@media (max-width: 400px) and (min-height: 500px) {
+	#first_page {
+		height: 50vh !important;
+	}
+
+	div#car1, div#car2, div#car3 {
+		height: 50vh !important;
+	}
+}
