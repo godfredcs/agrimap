@@ -30,7 +30,7 @@ var Regions = {
 
 	updateRegion: function(form)
 	{
-		App.submitForm(form, Regions.refreshRegions);
+		App.submitForm(form, Regions.refreshRegions, $('#region-update-errors-container'));
 	},
 
 	refreshRegions: function()

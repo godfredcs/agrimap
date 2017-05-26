@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMarketsTable extends Migration
+class CreateSiteVisitsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,11 @@ class CreateMarketsTable extends Migration
      */
     public function up()
     {
-        Schema::create('markets', function(Blueprint $table){
+        Schema::create('site_visits', function(Blueprint $table){
             $table->increments('id');
-            $table->string('name');
-            $table->integer('district_id')->unsigned();
+            $table->string('ip');
+            $table->dateTime('date');
             $table->timestamps();
-
-            $table->foreign('district_id')
-                  ->references('id')
-                  ->on('districts')
-                  ->onDelete('cascade');
         });
     }
 
@@ -33,6 +28,6 @@ class CreateMarketsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('markets');
+        Schema::dropIfExist('site_visits');
     }
 }

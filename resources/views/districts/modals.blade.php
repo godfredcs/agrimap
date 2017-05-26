@@ -9,7 +9,7 @@
                 <h4>Add New District</h4>
             </div>
 
-           <form class="form" method="POST" action="/districts" id="district-add-form">
+           <form class="form" method="POST" action="/districts" id="district-add-form" enctype="multipart/form-data">
             <div class="modal-body">
                 <div id="district-add-errors-container">
                     @include('partials.modal_errors')

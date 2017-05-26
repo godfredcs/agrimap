@@ -59,7 +59,7 @@
 
            <form class="form" method="POST" action="" id="region-edit-form">
             <div class="modal-body">
-                <div id="regions-update-errors-container">
+                <div id="region-update-errors-container">
                     @include('partials.modal_errors')
                 </div>
 
