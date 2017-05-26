@@ -18,7 +18,7 @@ class CropsController extends Controller
      */
     public function website()
     {
-        $crops = Crop::all();
+        $crops = Crop::paginate(4);
         return view('website.crops.index', compact('crops'));
     }
 

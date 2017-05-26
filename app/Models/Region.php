@@ -18,9 +18,4 @@ class Region extends Model
     {
     	return $this->hasMany(District::class, 'region_id');
     }
-
-    public function crops()
-    {
-        return $this->hasMany(Crop::class);
-    }
 }

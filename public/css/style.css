@@ -15,9 +15,9 @@ ul.nav.navbar-nav li>a:hover, .nav>.active {
 	background-color: #0E340F !important;
 }
 
-ul.nav.navbar-nav > li.active {
+.current {
 	color: white !important;
-	background-color: #0e340f !important;
+	background-color: #0e340f;
 }
 
 a.navbar-brand {
@@ -87,6 +87,7 @@ div#car3 {
 #services {
 	background-color: #f5f5f5;
 	padding: 50px 0;
+	font-size: 1.3em;
 }
 
 #info {
@@ -97,6 +98,7 @@ div#car3 {
 	background-color: #247024;
 	color: #ffffff;
 	padding: 50px 0;
+	font-size: 1.3em;
 }
 
 #footer {
@@ -107,7 +109,13 @@ div#car3 {
 	color: #247024;
 }
 
-
+@media (max-width: 767px) {
+	div.slider-text > h1 {
+		font-size: 2em;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
 
 @media (max-width: 400px) and (min-height: 500px) {
 	#first_page {

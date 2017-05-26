@@ -12,8 +12,8 @@
 			<table class="table table-bordered">
 				<thead>
 					<tr>
-						<th class="bg-success">Districts</th>
-						<th class="bg-success">Crops</th>
+						<th>Districts</th>
+						<th>Crops</th>
 					</tr>
 				</thead>
 				<tbody>
