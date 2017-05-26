@@ -16,7 +16,7 @@ class CreateSiteVisitsTable extends Migration
         Schema::create('site_visits', function(Blueprint $table){
             $table->increments('id');
             $table->string('ip');
-            $table->dateTime('date');
+            $table->date('time_visited');
             $table->timestamps();
         });
     }

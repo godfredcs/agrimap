@@ -8,7 +8,7 @@ var Dashboard = {
     {
     	$.ajax({
 	        type: 'get',
-	        url : '/sales/week_details',
+	        url : '/views/week_details',
 	        success: function(response){
 	        	var collection = [];
 	        	console.log(response);
@@ -19,7 +19,7 @@ var Dashboard = {
 
 	        	console.log(collection);
 
-	            var chart = new CanvasJS.Chart("sales-this-week", {
+	            var chart = new CanvasJS.Chart("views-this-week", {
 				    title:{
 				      text: "",
 				      fontColor: "rgba(100,149,237)"              
@@ -35,7 +35,7 @@ var Dashboard = {
 				    data: [              
 					    {
 						     // Change type to "doughnut", "line", "splineArea", etc.
-						    type: "line",
+						    type: "splineArea",
 						    dataPoints: collection
 					    }
 				    ]

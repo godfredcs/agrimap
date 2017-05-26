@@ -21,6 +21,7 @@ Route::get('show_region/{region}', 'RegionsController@showRegion');
 
 Route::get('districts', 'DistrictsController@website');
 Route::get('districts/{district}', 'DistrictsController@district');
+Route::get('/views/week_details', 'DashboardController@getWeekDetails');
 
 // Auth Routes
 Auth::routes();
@@ -32,6 +33,7 @@ Route::group(['prefix' => 'admin'], function(){
 	Route::get('/', 'DashboardController@index')->middleware('auth');
 
 	Route::get('dashboard', 'DashboardController@index');
+
 
 	Route::group(['middleware' => 'admin'], function(){
 	    // Crops Routes
