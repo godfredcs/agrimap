@@ -11,10 +11,10 @@
 			</div>
 			<div id="mynav" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
-					<li class="{{ Request::segment(1) === '' ? 'active' : null }}"><a href="/">Home</a></li>
-					<li class="{{ Request::segment(1) === 'crops' ? 'active' : null }}"><a href="/crops">Crops</a></li>
-					<li class="{{ Request::segment(1) === 'regions' ? 'active' : null }}"><a href="/regions">Regions</a></li>
-					<li class="{{ Request::segment(1) === 'districts' ? 'active' : null }}"><a href="/districts">Districts</a></li>
+					<li class="{{ empty(Request::segment(1)) ? 'current' : null }}"><a href="/">Home</a></li>
+					<li class="{{ Request::segment(1) === 'crops' ? 'current' : null }}"><a href="/crops">Crops</a></li>
+					<li class="{{ Request::segment(1) === 'regions' ? 'current' : null }}"><a href="/regions">Regions</a></li>
+					<li class="{{ Request::segment(1) === 'districts' ? 'current' : null }}"><a href="/districts">Districts</a></li>
 				</ul>
 			</div>
 		</div>

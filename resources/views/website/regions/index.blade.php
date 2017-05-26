@@ -9,29 +9,24 @@
 		<div class="gap"></div>
 		<div class="gap"></div>
 		<div class="container">
-			<ul>
-				@foreach($regions as $region)
-					<li>{{ $region->name }}</li>
-				@endforeach
-			</ul>
 			<table class="table table-bordered">
 				<thead>
 					<tr>
 						<th>Regions</th>
-						<th>Crops</th>
+						<th>Districts</th>
 					</tr>
 				</thead>
 				<tbody>
-						@foreach($regions as $region)
-					<tr>
+					@foreach($regions as $region)
+						<tr>
 							<td>{{ $region->name }}</td>
 							<td>
-								@foreach($regions->crops as $crop)
-									{{ $crop->name }}, 
+								@foreach($region->districts as $district)
+									{{ $district->name }} <br>
 								@endforeach
-							</td>
-					</tr>
-						@endforeach
+							</td>							
+						</tr>
+					@endforeach
 				</tbody>
 			</table>
 		</div>

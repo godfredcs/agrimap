@@ -13,8 +13,8 @@
 				<div id="car1">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-8 slider-text">
-								<h1>We make it easy to collect, store and share farm data</h1>			
+							<div class="col-xs-8 col-sm-8 slider-text">
+								<h1>We make it easy to locate and collect farm crops in every district and region</h1>			
 							</div>
 						</div>
 					</div>
@@ -22,11 +22,27 @@
 			</div>
 
 			<div class="item">
-				<div id="car2"></div>
+				<div id="car2">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-8 col-sm-8 slider-text">
+								<h1 class="text-right">Know more about each region and the crops they produce.</h1>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<div class="item">
-				<div id="car3"></div>
+				<div id="car3">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-8 col-sm-8 col-xs-offset-4 col-sm-offset-4 slider-text">
+								<h1>Explore the variety of crops available in each district</h1>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 		</div>

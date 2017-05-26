@@ -9,7 +9,7 @@ class RegionsController extends Controller
 {
 	public function __construct()
 	{
-		$this->middleware('guest', ['only' => 'website']);
+		$this->middleware('guest', ['only' => ['website' , 'showRegion']]);
 	}
 
 	/**
@@ -20,6 +20,17 @@ class RegionsController extends Controller
 	{
 		$regions = Region::all();
 		return view('website.regions.index', compact('regions'));
+	}
+
+	/**
+	 * Display specific region , its districts and crops
+	 * @param  [type] $id [description]
+	 * @return [type]     [description]
+	 */
+	public function showRegion($id)
+	{
+		$region = Region::with('districts')->find($id);
+		return view('website.regions.show' , ['region' => $region]);
 	}
 
 	/**

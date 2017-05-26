@@ -17,7 +17,7 @@ Route::get('crops', 'CropsController@website');
 Route::get('crops/{crop}', 'CropsController@crops');
 
 Route::get('regions', 'RegionsController@website');
-Route::get('regions/{region}', 'RegionsController@regions');
+Route::get('show_region/{region}', 'RegionsController@showRegion');
 
 Route::get('districts', 'DistrictsController@website');
 Route::get('districts/{district}', 'DistrictsController@district');
