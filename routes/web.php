@@ -23,6 +23,9 @@ Route::get('districts', 'DistrictsController@website');
 Route::get('districts/{district}', 'DistrictsController@district');
 Route::get('/views/week_details', 'DashboardController@getWeekDetails');
 
+Route::post('/backup', 'BackupsController@backup');
+Route::post('/restore', 'BackupsController@restore');
+
 // Auth Routes
 Auth::routes();
 
@@ -52,8 +55,6 @@ Route::group(['prefix' => 'admin'], function(){
 		// Users Routes
 		Route::resource('users', 'UsersController');
 		Route::get('/backup', 'BackupsController@index');
-		Route::post('/backup', 'BackupsController@backup');
-		Route::post('/restore', 'BackupsController@restore');
 	});
 
 	// Support Routes
