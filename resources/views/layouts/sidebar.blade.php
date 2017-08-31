@@ -1,15 +1,12 @@
 <div class="left_col scroll-view" style="width: 100%">
 	<div class="navbar nav_title" style="border: 0;">
-		<a href="{!! URL::to('/') !!}" class="site_title"><i class="fa fa-pagelines"></i> <span>agrimap</span></a>
+		<a href="{!! URL::to('/') !!}" class="site_title"><i class="fa fa-pagelines"></i> <span>WBFLS</span></a>
 	</div>
 
 	<div class="clearfix"></div>
 
 	<!-- menu profile quick info -->
 	<div class="profile clearfix">
-		<div class="profile_pic">
-			<img id="profile-pic" src="{{ URL::asset('/images/logo.jpg') }}" class="img-circle profile_img">
-		</div>
 
 		<div class="profile_info">
 			<span>Welcome</span>
@@ -29,9 +26,9 @@
 				<li><a href="{{ URL::to('/admin/') }}"><i class="fa fa-dashboard"></i> Dashboard</a></li>
 
 				@if(Auth::user()->isSiteAdmin())
-					<li><a href="{{ URL::to('/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
-					<li><a href="{{ URL::to('/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
-					<li><a href="{{ URL::to('/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
+					<li><a href="{{ URL::to('/admin/crops') }}"><i class="fa fa-pagelines"></i> Crops</a></li>
+					<li><a href="{{ URL::to('/admin/regions') }}"><i class="fa fa-globe"></i> Regions</a></li>
+					<li><a href="{{ URL::to('/admin/districts') }}"><i class="fa fa-home"></i> Districts</a></li>
 				@endif
 				
 				@if(Auth::user()->isSystemAdmin())
@@ -43,8 +40,8 @@
 
 		<div class="menu_section">
 			<ul class="nav side-menu">
-				<li class="{{ Request::segment(1) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/admin/users/'.Auth::user()->id) }}"><i class="fa fa-user"></i>My Account</a></li>
-				<li class="{{ Request::segment(1) === 'support' ? 'active' : null }}"><a href="{{ URL::to('/admin/support') }}"><i class="fa fa-support"></i>Support</a></li>
+				<li class="{{ Request::segment(2) === 'my_account' ? 'active' : null }}"><a href="{{ URL::to('/admin/users/'.Auth::user()->id) }}"><i class="fa fa-user"></i>My Account</a></li>
+				<li class="{{ Request::segment(2) === 'support' ? 'active' : null }}"><a href="{{ URL::to('/admin/support') }}"><i class="fa fa-support"></i>Support</a></li>
 			</ul>
 		</div>
 	</div>

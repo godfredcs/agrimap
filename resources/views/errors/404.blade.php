@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Agrimap | Page not found</title>
+	<title>WBFLS | Page not found</title>
 	@include('website.partials.stylesheets')
 </head>
 <body>

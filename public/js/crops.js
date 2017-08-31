@@ -8,11 +8,11 @@ var Crops = {
 	{
 		$.ajax({
 	        type: 'get',
-	        url : '/crops/' + id,
+	        url : '/admin/crops/' + id,
 	        success: function(response){
 	        	$('#crop-name-update-box').val(response.name);
 	        	$('#crop-description-update-box').val(response.description);
-	        	$('#crop-edit-form').attr('action', 'crops/' + id);
+	        	$('#crop-edit-form').attr('action', '/admin/crops/' + id);
 
 	        	$('#update-crop').modal('show');
 		    }
@@ -40,7 +40,7 @@ var Crops = {
 
 		$.ajax({
 	        type: 'get',
-	        url : '/crops',
+	        url : '/admin/crops',
 	        success: function(response){
 		        $('#crops-container').html(response);
 		    }
@@ -70,7 +70,7 @@ var Crops = {
 			e.preventDefault();
 			var id = $(this).attr('data-id');
             
-            $('.delete-form').attr('action', '/crops/' + id);
+            $('.delete-form').attr('action', '/admin/crops/' + id);
             $('.delete-form').attr('id', 'crop-delete-form');
             App.showConfirmDialog("Do you want to delete this crop?");
 		});

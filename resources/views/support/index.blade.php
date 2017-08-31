@@ -22,7 +22,7 @@
 		                    </div>
 
 		                    <div class="x_content">
-		                        <form method="post" action="{!! URL::to('/support/send_message') !!}" data-parsley-validate="true">
+		                        <form method="post" action="{!! URL::to('/admin/support/send_message') !!}" data-parsley-validate="true">
 
 		                            {!! csrf_field() !!}
 		                            @include('errors.form_errors')

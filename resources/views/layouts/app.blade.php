@@ -54,7 +54,7 @@
 
 					<footer>
 						<div class="pull-right">
-							<p>&copy; {{ date('Y') }} - Agrimap</p>
+							<p>&copy; {{ date('Y') }} - WBFLS</p>
 						</div>
 
 						<div class="clearfix"></div>

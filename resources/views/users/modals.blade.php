@@ -1,7 +1,7 @@
 {{-- Add Modal --}}
 <div class="modal fade custom-modal" id="add">
 	<div class="modal-dialog">
-		<form role="form" class="modal-content" action="{{ URL::to('/users') }}" method="post">
+		<form role="form" class="modal-content" action="{{ URL::to('admin/users') }}" method="post">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">
                     <span aria-hidden="true">x</span>

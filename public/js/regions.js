@@ -8,10 +8,10 @@ var Regions = {
 	{
 		$.ajax({
 	        type: 'get',
-	        url : '/regions/' + id,
+	        url : '/admin/regions/' + id,
 	        success: function(response){
 	        	$('#region-name-update-box').val(response.name);
-	        	$('#region-edit-form').attr('action', '/regions/' + id);
+	        	$('#region-edit-form').attr('action', '/admin/regions/' + id);
 
 	        	$('#update-region').modal('show');
 		    }
@@ -39,7 +39,7 @@ var Regions = {
 
 		$.ajax({
 	        type: 'get',
-	        url : '/regions',
+	        url : '/admin/regions',
 	        success: function(response){
 		        $('#regions-container').html(response);
 		    }
@@ -64,7 +64,7 @@ var Regions = {
 			e.preventDefault();
 			var id = $(this).attr('data-id');
             
-            $('.delete-form').attr('action', '/regions/' + id);
+            $('.delete-form').attr('action', '/admin/regions/' + id);
             $('.delete-form').attr('id', 'region-delete-form');
             App.showConfirmDialog("Do you want to delete this region?");
 		});

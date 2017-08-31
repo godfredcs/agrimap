@@ -6,12 +6,12 @@ var Districts = {
 
 	addDistrict: function(form)
 	{
-		App.submitForm(form,Districts.refreshDistricts,$('#district-add-errors-container'));
+		App.submitForm(form, Districts.refreshDistricts, $('#district-add-errors-container'));
 	},
 
 	updateDistrict: function(form)
 	{
-		App.submitForm(form, Districts.refreshDistricts,$('#district-update-errors-container'));
+		App.submitForm(form, Districts.refreshDistricts, $('#district-update-errors-container'));
 	},
 
 	loadEditFields: function(id)
@@ -32,7 +32,7 @@ var Districts = {
 	        	$('#district-name-update-box').val(response.name);
 	        	$('#district-region-update-select').val(selectedRegion).change();
 	        	$('#district-crops-update-select').val(selectedCrops).change();
-	        	$('#district-edit-form').attr('action', 'districts/' + id);
+	        	$('#district-edit-form').attr('action', '/districts/' + id);
 
 	        	$('#update-district').modal('show');
 		    }

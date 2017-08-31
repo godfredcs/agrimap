@@ -49,7 +49,7 @@ var Users = {
 		var passwordFields = $(modal).find('.password-fields');
 
 		// Requesting for the details through a GET request with the id as a wildcard
-		$.get('/users/' + user_id, function(response) {
+		$.get('/admin/users/' + user_id, function(response) {
 			var user = response;
 
 			$(modal + ' input[name=username]').val(user.username);
@@ -59,7 +59,7 @@ var Users = {
 		});
 
 		//Setting the form's action with user's id
-		var url = 'http://' + window.location.host + '/users/' + user_id;
+		var url = 'http://' + window.location.host + '/admin/users/' + user_id;
 		$('div.modal#edit form').attr('action', url);
 	},
 
@@ -182,7 +182,7 @@ var Users = {
 
 		NProgress.inc(0.01);
 
-		$.get('/users', parameters, function(response) {
+		$.get('/admin/users', parameters, function(response) {
             $('#users-table-wrapper').html(response);
 
 			NProgress.done();
@@ -195,7 +195,7 @@ var Users = {
 	 */
 	InitiateDelete: function (element) {
 		var id  = $(element).attr('data-id');
-		var url = 'http://' + window.location.host + '/users/' + id;
+		var url = 'http://' + window.location.host + '/admin/users/' + id;
 
 		$('div.modal#delete form').attr('action', url);
 	},
@@ -244,7 +244,7 @@ var Users = {
 	RefreshPage: function () {
 		NProgress.inc(0.01);
 
-		$.get('/users', function(response) {
+		$.get('/admin/users', function(response) {
 			$('#users-table-wrapper').html(response);
 		}).always(function() {
 			NProgress.done();

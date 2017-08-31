@@ -7,7 +7,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="/" class="navbar-brand">Agrimap</a>
+				<a href="/" class="navbar-brand">WBFLS</a>
 			</div>
 			<div id="mynav" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">

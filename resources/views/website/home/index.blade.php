@@ -21,7 +21,7 @@
 
 	<section id="name">
 		<div class="container">
-			<center><h2>AgriMap</h2></center>
+			<center><h2>WEB-BASED FARM LOCATOR SYSTEM</h2></center>
 			<hr>		
 
 	        <?php $curr = 0; ?>
@@ -47,7 +47,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<p class="text-center">With Agrimap it is easier to locate and collect farm crops and data about them in each region or district. Exploring the variety of crops and the regions or districts that produce them is also made quite easy.</p>
+					<p class="text-center">Web-based farm locator system makes it easier to locate and collect farm crops and data about them in each region or district. Exploring the variety of crops and the regions or districts that produce them is also made quite easy.</p>
 				</div>
 			</div>
 		</div>

@@ -9,7 +9,7 @@
                 <h4>Add New Region</h4>
             </div>
 
-           <form class="form" method="POST" action="/regions" id="region-add-form">
+           <form class="form" method="POST" action="regions" id="region-add-form">
             <div class="modal-body">
                 <div id="region-add-errors-container">
                     @include('partials.modal_errors')

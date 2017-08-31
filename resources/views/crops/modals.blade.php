@@ -9,7 +9,7 @@
                 <h4>Add New Crop</h4>
             </div>
 
-           <form class="form" method="POST" action="/crops" id="crop-add-form">
+           <form class="form" method="POST" action="crops" id="crop-add-form">
             <div class="modal-body">
                 <div id="crop-add-errors-container">
                     @include('partials.modal_errors')

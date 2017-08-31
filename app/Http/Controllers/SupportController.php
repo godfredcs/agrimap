@@ -34,7 +34,7 @@ class SupportController extends Controller
      */
     public function sendMessage(Request $request)
     {
-    	$destination = 'agrimapdev@gmail.com';
+    	$destination = 'addaiz.godfred@gmail.com';
 
     	$validator = Validator::make($request->all(),
     		[

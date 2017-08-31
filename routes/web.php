@@ -37,6 +37,10 @@ Route::group(['prefix' => 'admin'], function(){
 
 	Route::get('dashboard', 'DashboardController@index');
 
+	// Districts Routes
+	Route::post('/districts/filter', 'DistrictsController@filter');
+	Route::post('/districts/search', 'DistrictsController@search');
+
 
 	Route::group(['middleware' => 'admin'], function(){
 	    // Crops Routes
@@ -45,18 +49,17 @@ Route::group(['prefix' => 'admin'], function(){
 		// Regions Routes
 		Route::resource('regions', 'RegionsController');
 
-		// Districts Routes
 		Route::resource('districts', 'DistrictsController');
-		Route::post('/districts/filter', 'DistrictsController@filter');
-		Route::post('/districts/search', 'DistrictsController@search');
+
 	});
 
 	Route::group(['middleware' => 'sys_admin'], function(){
 		// Users Routes
-		Route::resource('users', 'UsersController');
 		Route::get('/backup', 'BackupsController@index');
 	});
 
+	Route::resource('users', 'UsersController');
+	
 	// Support Routes
 	Route::get('/support' , 'SupportController@index');
 	Route::post('/support/send_message' , 'SupportController@sendMessage');

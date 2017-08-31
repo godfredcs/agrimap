@@ -10,7 +10,7 @@
 
 			<div class="row">
 				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-2">
-					<img id="login-logo" class="img-responsive" src="{{ URL::asset('images/logo.jpg') }}">	
+					<h2 class="text-center" style="font-weight: 600; color: green; letter-spacing: 2px">WBFLS</h2>	
 				</div>
 			</div>
 
